@@ -1,14 +1,15 @@
 kind: pipeline
-name: qa_devops
+name: default
+
+platform:
+  os: linux
+  arch: arm
 
 steps:
-- name: greeting
+- name: test
   image: alpine
   commands:
-  - echo hello
-  - echo world
-  when:
-    branch:
-    - master
-    event:
-    - push
+  - apk add emacs nodejs
+  - make dependencies
+  - make test
+  - make lint
