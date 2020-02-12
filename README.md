@@ -12,6 +12,7 @@ python2.7 get_repos.py
 # correr odoo
 docker-compose up
 ```
+## jjvargass
 
 ## Licencia
 
