@@ -19,4 +19,4 @@ steps:
   - echo solo master
   when:
     branch:
-    - masters
+    - master
