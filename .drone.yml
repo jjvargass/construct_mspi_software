@@ -8,3 +8,15 @@ steps:
   - echo hello
   - echo hello 2 error
   - echo world
+  when:
+    branch:
+    - dev
+    - test
+
+- name: solo master
+  image: python:2.7
+  commands:
+  - echo solo master
+  when:
+    branch:
+    - masters
