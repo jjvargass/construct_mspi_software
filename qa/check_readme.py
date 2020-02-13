@@ -3,7 +3,7 @@
 import logging
 
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.CRITICAL)
 _logger = logging.getLogger('CHECK_README')
 _logger.setLevel(logging.DEBUG)
 
