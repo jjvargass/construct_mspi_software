@@ -3,7 +3,7 @@
 import logging
 
 
-logging.basicConfig()
+logging.basicConfig(level=logging.DEBUG)
 _logger = logging.getLogger('CHECK_README')
 _logger.setLevel(logging.DEBUG)
 
@@ -65,12 +65,12 @@ def check_readme():
 
         # Resultado del Check
         _logger.info("=================================")
-        _logger.info("RESULTADO CHECK BRANCH :")
+        _logger.info("RESULTADO CHECK BRANCH:")
         _logger.info("====")  
         if (total_encontradas > control):
             _logger.info("Cumple con los lineamientos")
         else:
-            _logger.error(" ERROR No Cumple con los Lineamientos")
+            _logger.error("No Cumple con los Lineamientos")
 
     except IOError:
             _logger.error("=================================")
