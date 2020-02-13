@@ -33,9 +33,9 @@ steps:
     format: html
     template: >
       {{#success build.status}}
-       {{repo.name}}/build {{build.number}} {{urlencode build.link }} by:{{build.author}}
+        {{repo.name}}/{{build.branch}} build {{build.number}} by:@{{build.author}}
       {{else}}
-        build {{build.number}} failed. Fix me please. <@channelname> <@someone>
+        {{repo.name}}/{{build.branch}} build {{build.number}} by:@{{build.author}}
       {{/success}}
 
 ---
