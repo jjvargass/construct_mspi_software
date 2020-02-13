@@ -7,10 +7,3 @@ steps:
   commands:
   - echo hello
   - echo world
-  when:
-    branch:
-    - dev
-    - test
-    - master
-    event:
-    - push
