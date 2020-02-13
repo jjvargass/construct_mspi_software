@@ -1,15 +1,9 @@
 kind: pipeline
 name: default
 
-platform:
-  os: linux
-  arch: arm
-
 steps:
-- name: test
+- name: greeting
   image: alpine
   commands:
-  - apk add emacs nodejs
-  - make dependencies
-  - make test
-  - make lint
+  - echo hello
+  - echo world
