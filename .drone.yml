@@ -32,7 +32,7 @@ steps:
     link_names: true
     template: >
       {{#success build.status}}
-        build {{build.number}} succeeded. Good job. <@john.doe>
+        build {{build.number}} succeeded. Good job. <{{commit.author}}>
       {{else}}
         build {{build.number}} failed. Fix me please. <@channelname> <@someone>
       {{/success}}
