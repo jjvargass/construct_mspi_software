@@ -9,4 +9,6 @@ steps:
   - echo world
   when:
     branch:
-    - develop
+    - dev
+    - test
+    - master
