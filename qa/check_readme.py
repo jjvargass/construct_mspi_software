@@ -71,6 +71,7 @@ def check_readme():
             _logger.info("Cumple con los lineamientos")
         else:
             _logger.error("No Cumple con los Lineamientos")
+            raise Exception('No Cumple con los Lineamientos')
 
     except IOError:
             _logger.error("=================================")
