@@ -30,12 +30,15 @@ steps:
       from_secret: webhook_and
     channel: ci-develop
     link_names: true
-    template: >
-      {{#success build.status}}
-        build {{build.number}} succeeded. Good job. <{{commit.author}}>
-      {{else}}
-        build {{build.number}} failed. Fix me please. <@channelname> <@someone>
-      {{/success}}
+      template: >
+        {{#success build.status}}
+          [{{repo.name}}] [{{build.branch}}] [{{build.number}}] Succeeded by {{build.author}}
+        {{else}}
+          [{{repo.name}}] [{{build.branch}}] [{{build.number}}] Failed by {{build.author}}
+          Please visit {{build.link}} for more details.
+        {{/success}}
+    when:
+      status: [ success, failure ]
 
 ---
 
