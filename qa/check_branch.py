@@ -26,7 +26,8 @@ _logger.info("====")
 if len(all_branches) >= max_branche:
     for i in all_branches:
         _logger.info(i)
-    _logger.error('A superado el numero maximo de branch\n')
+    _logger.error('A superado el numero maximo de branch')
+    raise Exception('A superado el numero maximo de branch')
 else:
     _logger.info('A cumplido con el lineamiento de limpieza de brachs\n')
 
