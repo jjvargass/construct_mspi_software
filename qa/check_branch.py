@@ -8,7 +8,7 @@ logging.basicConfig()
 _logger = logging.getLogger('CHECK_BRANCH')
 _logger.setLevel(logging.DEBUG)
 
-max_branche = 10
+max_branche = 0
 path = os.getcwd()
 repo = Repo(path)
 
@@ -26,7 +26,7 @@ _logger.info("====")
 if len(all_branches) >= max_branche:
     for i in all_branches:
         _logger.info(i)
-    _logger.error('A superado el numero maximo de branch')  
+    _logger.error('A superado el numero maximo de branch\n')
 else:
-    _logger.info('A cumplido con el lineamiento de limpieza de brachs')
+    _logger.info('A cumplido con el lineamiento de limpieza de brachs\n')
 
