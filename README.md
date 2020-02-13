@@ -1,8 +1,6 @@
 # construct_mspi_software
 Este repositorio contiene una serie de script para dockerizar el proyecto [mspi-software](https://github.com/jjvargass/mspi-software)
 
- 
-
 ### Correr
 ```bash
 # Descarga los repositorios necesarios
@@ -12,7 +10,6 @@ python2.7 get_repos.py
 # correr odoo
 docker-compose up
 ```
-## jjvargass
 
 ## Licencia
 
