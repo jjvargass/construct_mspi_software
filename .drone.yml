@@ -5,13 +5,12 @@ steps:
 - name: check_guidelines
   image: python:2.7
   commands:
-  - echo hello
-  - echo hello 2 error
-  - echo world
+  - python qa/check_readme.py
   when:
     branch:
     - dev
     - test
+    - master
 
 - name: solo master
   image: python:2.7
