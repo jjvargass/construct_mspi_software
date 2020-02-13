@@ -33,9 +33,9 @@ steps:
     format: html
     template: >
       {{#success build.status}}
-        {{repo.name}}/{{build.branch}} build {{build.number}} by:@{{build.author}}
+        {{repo.name}}/{{build.branch}} build {{build.number}} SUCCEEDED by:@{{build.author}}
       {{else}}
-        {{repo.name}}/{{build.branch}} build {{build.number}} by:@{{build.author}}
+        {{repo.name}}/{{build.branch}} build {{build.number}} FAILED by:@{{build.author}}
       {{/success}}
 
 ---
