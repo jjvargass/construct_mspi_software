@@ -22,3 +22,18 @@ steps:
     - dev
     - test
     - master
+---
+
+kind: pipeline
+name: deploy_client
+
+steps:
+- name: deploy
+  image: alpine
+  commands:
+  - echo hello world
+  when:
+    branch:
+    - dev
+    - test
+    - master
