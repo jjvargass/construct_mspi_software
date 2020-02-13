@@ -7,7 +7,7 @@ steps:
   commands:
   - pip install gitpython
   - python qa/check_branch.py
-  - echo "+++++++++++++++++++++++++++++++++++"
+  - echo "\n"
   - python qa/check_readme.py
   when:
     branch:
