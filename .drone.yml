@@ -29,11 +29,12 @@ steps:
     webhook:
       from_secret: webhook_and
     channel: ci-develop
+    link_names: true
     template: >
       {{#success build.status}}
-        build {{build.number}} succeeded. Good job.
+        build {{build.number}} succeeded. Good job. <@john.doe>
       {{else}}
-        build {{build.number}} failed. Fix me please.
+        build {{build.number}} failed. Fix me please. <@channelname> <@someone>
       {{/success}}
 
 ---
