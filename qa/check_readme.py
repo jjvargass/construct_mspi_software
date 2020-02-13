@@ -70,7 +70,7 @@ def check_readme():
         if (total_encontradas > control):
             _logger.info("Cumple con los lineamientos")
         else:
-            _logger.error("No Cumple con los Lineamientos")
+            _logger.error(" ERROR No Cumple con los Lineamientos")
 
     except IOError:
             _logger.error("=================================")
