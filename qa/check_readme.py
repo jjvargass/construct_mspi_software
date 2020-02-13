@@ -78,6 +78,5 @@ def check_readme():
             _logger.error("No Existe Arvhivo README.md - No Cumple con los Lineamientos")
             raise Exception('No Existe Arvhivo README.md - No Cumple con los Lineamientos')
 
-
 if __name__ == '__main__':
     check_readme()

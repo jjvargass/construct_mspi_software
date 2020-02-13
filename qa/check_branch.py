@@ -8,7 +8,7 @@ logging.basicConfig()
 _logger = logging.getLogger('CHECK_BRANCH')
 _logger.setLevel(logging.DEBUG)
 
-max_branche = 0
+max_branche = 15
 path = os.getcwd()
 repo = Repo(path)
 
