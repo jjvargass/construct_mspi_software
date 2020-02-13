@@ -33,7 +33,7 @@ steps:
     format: html
     template: >
       {{#success build.status}}
-       {{repo.name}}/build {{build.number}} <a href="{{build.link}}">SUCCESS</a> by:{{build.author}}
+       {{repo.name}}/build {{build.number}} {{urlencode build.link }} by:{{build.author}}
       {{else}}
         build {{build.number}} failed. Fix me please. <@channelname> <@someone>
       {{/success}}
