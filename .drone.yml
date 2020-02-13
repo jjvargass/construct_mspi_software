@@ -5,6 +5,7 @@ steps:
 - name: check_guidelines
   image: python:2.7
   commands:
+  - pip install gitpython
   - python qa/check_branch.py
   - echo "+++++++++++++++++++++++++++++++++++"
   - python qa/check_readme.py
