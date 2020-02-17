@@ -26,20 +26,20 @@ def check_readme():
             all_line = f.readlines()
             _logger.info("=================================")
             _logger.info("DEFINICIONES ENCONTRADAS:")
-            _logger.info("====") 
+            _logger.info("====")
         for line in all_line:
             if  words[0] in line:
                 _logger.info(words[0])
                 total_encontradas +=1
-                words_encontradas.append(words[0])           
+                words_encontradas.append(words[0])
             if  words[1] in line:
                 _logger.info(words[1])
                 total_encontradas +=1
-                words_encontradas.append(words[1])       
+                words_encontradas.append(words[1])
             if  words[2] in line:
-                _logger.info(words[2])         
+                _logger.info(words[2])
                 total_encontradas +=1
-                words_encontradas.append(words[2])       
+                words_encontradas.append(words[2])
             if  words[3] in line:
                 _logger.info(words[3])
                 total_encontradas +=1
@@ -59,15 +59,15 @@ def check_readme():
         else:
             _logger.info("=================================")
             _logger.info("DEFINICIONES NO ENCONTRADAS:")
-            _logger.info("====")         
+            _logger.info("====")
             words_no_encontradas =  list(set(words).difference(words_encontradas))
             for pp in words_no_encontradas:
-                _logger.info(pp)     
+                _logger.info(pp)
 
         # Resultado del Check
         _logger.info("=================================")
         _logger.info("RESULTADO CHECK BRANCH:")
-        _logger.info("====")  
+        _logger.info("====")
         if (total_encontradas > control):
             _logger.info("Cumple con los lineamientos")
         else:

@@ -46,8 +46,16 @@ commits_sin_lineamiento = []
 
 for i in commits_list:
     comentrario = i.split(':')
-    print comentrario[0]
+    print len(comentrario)
     if ('feat' in comentrario[0]) or ('fix' in comentrario[0]) or ('docs' in comentrario[0]) or ('test' in comentrario[0]) or ('refactor' in comentrario[0]):
         pass
+        print comentrario[0]
     else:
         commits_sin_lineamiento.append(comentrario[0])
+
+if len(commits_sin_lineamiento) >= max_commits_no_lineamiento:
+    _logger.error("Ha Supperado el Limite de Commits Sin lineamiento")
+    _logger.error("De {} Commits, {} No Cumplen con Lineamientos".format(total_commits, len(commits_sin_lineamiento) ))
+    raise Exception('Ha Supperado el Limite de Commits Sin lineamiento')
+else:
+    _logger.info('A Cumplido con el Lineamiento de Definición de Commits\n')
