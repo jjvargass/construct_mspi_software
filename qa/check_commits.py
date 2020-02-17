@@ -34,8 +34,8 @@ _logger.info("INTERVALO DE {} HASTA {}".format(form_fecha_inicio, form_fecha_fin
 _logger.info("====")
 
 
-#commits_list = repo.git.log('--oneline', after, before, '--format=%B').split('\n')
-commits_list = repo.git.log('--oneline', '--after=2020-02-17 00:00', '--before=2020-02-17 23:59', '--format=%B').split('\n')
+commits_list = repo.git.log('--oneline', after, before, '--format=%B').split('\n')
+#commits_list = repo.git.log('--oneline', '--after=2020-02-17 00:00', '--before=2020-02-17 23:59', '--format=%B').split('\n')
 
 # limpiar lista
 while("" in commits_list):
