@@ -54,7 +54,14 @@ steps:
       Author: {{ build.author }}
 
       <{{ build.link }}|Visit build page ↗>
-
+  when:
+    branch:
+    - dev
+    - test
+    - master
+    status:
+    - failure
+    - success
 
 ---
 
