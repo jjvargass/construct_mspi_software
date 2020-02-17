@@ -25,7 +25,7 @@ repo = Repo(path)
 print "### Intervalo de {}  hasta {}  ###".format(form_fecha_inicio, form_fecha_fin)
 
 #commits_list = repo.git.log('--oneline', after, before, '--format=%B').split('\n')
-commits_list = repo.git.log('--oneline', '--after=2020-02-11 00:00', '--before=2020-02-12 23:59', '--format=%B').split('\n')
+commits_list = repo.git.log('--oneline', '--after=2020-02-17 00:00', '--before=2020-02-17 23:59', '--format=%B').split('\n')
 
 # limpiar lista
 while("" in commits_list):
