@@ -7,12 +7,19 @@ import logging
 import datetime
 import calendar
 
+logging.basicConfig()
+_logger = logging.getLogger('CHECK_COMMITS')
+_logger.setLevel(logging.DEBUG)
+
+max_commits_no_lineamiento = 30
 date  = datetime.datetime.now()
 fecha_inicio = date.replace(day = 1)
 fecha_fin = date.replace(day = calendar.monthrange(date.year, date.month)[1])
+
 # formato
 form_fecha_inicio = fecha_inicio.strftime("%Y-%m-%d")
 form_fecha_fin = fecha_fin.strftime("%Y-%m-%d")
+
 # filtros
 # --after=2020-02-11 00:00
 after = '--after=' + str(form_fecha_inicio) +' 00:00'
@@ -22,7 +29,10 @@ before = '--before=' + str(form_fecha_fin) + ' 23:59'
 path = os.getcwd()
 repo = Repo(path)
 
-print "### Intervalo de {}  hasta {}  ###".format(form_fecha_inicio, form_fecha_fin)
+_logger.info("=================================")
+_logger.info("INTERVALO DE {} HASTA {}".format(form_fecha_inicio, form_fecha_fin))
+_logger.info("====")
+
 
 #commits_list = repo.git.log('--oneline', after, before, '--format=%B').split('\n')
 commits_list = repo.git.log('--oneline', '--after=2020-02-17 00:00', '--before=2020-02-17 23:59', '--format=%B').split('\n')
@@ -31,5 +41,13 @@ commits_list = repo.git.log('--oneline', '--after=2020-02-17 00:00', '--before=2
 while("" in commits_list):
     commits_list.remove("")
 
+total_commits = len(commits_list)
+commits_sin_lineamiento = []
+
 for i in commits_list:
-    print i
+    comentrario = i.split(':')
+    print comentrario[0]
+    if ('feat' in comentrario[0]) or ('fix' in comentrario[0]) or ('docs' in comentrario[0]) or ('test' in comentrario[0]) or ('refactor' in comentrario[0]):
+        pass
+    else:
+        commits_sin_lineamiento.append(comentrario[0])
