@@ -46,10 +46,8 @@ commits_sin_lineamiento = []
 
 for i in commits_list:
     comentrario = i.split(':')
-    print len(comentrario)
-    if ('feat' in comentrario[0]) or ('fix' in comentrario[0]) or ('docs' in comentrario[0]) or ('test' in comentrario[0]) or ('refactor' in comentrario[0]):
+    if (len(comentrario) > 1) and ( ('feat' in comentrario[0]) or ('fix' in comentrario[0]) or ('docs' in comentrario[0]) or ('test' in comentrario[0]) or ('refactor' in comentrario[0]) ):
         pass
-        print comentrario[0]
     else:
         commits_sin_lineamiento.append(comentrario[0])
 
