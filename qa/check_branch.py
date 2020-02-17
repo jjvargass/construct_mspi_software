@@ -1,4 +1,6 @@
+#!/usr/bin/python
 # -*- coding: utf8 -*-
+
 import os
 from git import Repo
 import logging
