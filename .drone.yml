@@ -6,8 +6,6 @@ steps:
   image: jjvargass/qa_develoment:0.1
   commands:
   - python /app/check_readme.py
-  - pwd
-  - ls -l
   when:
     branch:
     - dev
