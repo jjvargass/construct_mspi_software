@@ -14,6 +14,9 @@ Este repositorio contiene una serie de script para dockerizar el proyecto [mspi-
 # Descarga los repositorios necesarios
 python2.7 get_repos.py
 
+# Eliminar repo antiguo
+rm -r -f extra-addons/odoo-idu-addons-publico/src/plan_mejoramiento_idu/
+
 # correr odoo
 docker-compose up
 ```
