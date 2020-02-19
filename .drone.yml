@@ -38,7 +38,7 @@ steps:
   image: plugins/slack
   settings:
     webhook:
-      from_secret: webhook_and
+      from_secret: SLACK_AND_WEBHOOK
     channel: ci-develop
     link_names: true
     template: >
