@@ -8,9 +8,7 @@ services:
     ports:
       - "5432:5432"
   odoo_v9:
-    build:
-        context: odoo_v9
-        dockerfile: Dockerfile
+    image: jjvargass/odoo:9.0
     ports:
       - "8069:8069"
     depends_on:
