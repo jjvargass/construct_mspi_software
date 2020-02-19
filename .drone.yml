@@ -17,7 +17,6 @@ steps:
 - name: check_branch
   image: jjvargass/qa_develoment:0.1
   commands:
-  - pip install gitpython
   - python /app/check_branch.py
   when:
     branch:
@@ -28,7 +27,6 @@ steps:
 - name: check_commits
   image: jjvargass/qa_develoment:0.1
   commands:
-  - pip install gitpython
   - python /app/check_commits.py
   when:
     branch:
